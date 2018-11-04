@@ -1,5 +1,5 @@
 ![discord.json](https://nsa39.casimages.com/img/2018/11/04/181104041539518569.png)
-
+![Build](https://travis-ci.org/dotOverflow/discord.json.svg?branch=master)
 Discord.json | Make your own discord bot with json !
 [Join our Discord server !](https://discord.gg/X5ccPhr)
 
