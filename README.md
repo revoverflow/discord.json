@@ -9,7 +9,7 @@ Discord.json | Make your own discordbot with json !
     "welcome": {
         "enabled": true,
         "type": "channel",
-        "channel_id": "508588496856940546",
+        "channel_id": "CHANNEL ID",
         "message": "Welcome {user} to the server !"
     },
     "commands": [
@@ -51,5 +51,22 @@ Discord.json | Make your own discordbot with json !
 }
 ```
 
+## Advancement
+[x] Welcome
+    [x] Types (channel/dm)
+    [x] Message variable ({user})
+[ ] Leave message
+[ ] Command & actions
+    [x] send_message
+    [x] send_dm
+    [x] switch_role
+    [x] add_role
+    [x] remove_role
+    [ ] purge
+    [ ] send_embed
+    [ ] create_invite
+[x] Reaction messages
+    [x] Role switch
+[ ] Embed support
 ## Links
 [discord.js](https://github.com/discordjs/discord.js/)
