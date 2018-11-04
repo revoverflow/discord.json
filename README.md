@@ -67,7 +67,7 @@ Discord.json | Make your own discord bot with json !
     - [x] switch_role
     - [x] add_role
     - [x] remove_role
-    - [ ] purge
+    - [x] purge
     - [ ] send_embed
     - [ ] create_invite
 - [x] Reaction messages
