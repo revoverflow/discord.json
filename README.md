@@ -1,5 +1,5 @@
 # discord.json
-Discord.json | Make your own discordbot with json !
+Discord.json | Make your own discord bot with json !
 ## Sample configuration
 ```javascript
 {
