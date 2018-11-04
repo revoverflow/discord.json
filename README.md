@@ -55,7 +55,8 @@ Discord.json | Make your own discord bot with json !
 }
 ```
 
-## Advancement
+![Advancement](https://nsa39.casimages.com/img/2018/11/04/181104042331851103.png)
+
 - [x] Welcome
     - [x] Types (channel/dm)
     - [x] Message variable ({user})
@@ -73,7 +74,7 @@ Discord.json | Make your own discord bot with json !
     - [x] Role switch
 - [ ] Embed support
 
-## Links
+![Useful links](https://nsa39.casimages.com/img/2018/11/04/181104042331933180.png)
 
 - Used libraries :
 [discord.js](https://github.com/discordjs/discord.js/)
