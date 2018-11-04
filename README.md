@@ -68,5 +68,11 @@ Discord.json | Make your own discord bot with json !
 - [x] Reaction messages
     - [x] Role switch
 - [ ] Embed support
+
 ## Links
+
+- Used libraries :
 [discord.js](https://github.com/discordjs/discord.js/)
+
+- Useful websites :
+[copy and paste emoji](https://www.copyandpasteemoji.com/)
