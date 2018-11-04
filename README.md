@@ -1,6 +1,6 @@
 # discord.json
 Discord.json | Make your own discordbot with json !
-# Sample configuration
+## Sample configuration
 ```javascript
 {
     "general": {
@@ -50,3 +50,6 @@ Discord.json | Make your own discordbot with json !
     ]
 }
 ```
+
+## Links
+[discord.js](https://github.com/discordjs/discord.js/)
