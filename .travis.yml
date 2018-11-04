@@ -1,3 +1,8 @@
 language: node_js
 node_js:
-  - "discord.js"
+  - "5"
+before_script:
+  - npm install
+script:
+  - node app.js
+  - npm test
