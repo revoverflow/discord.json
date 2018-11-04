@@ -1,5 +1,7 @@
 # discord.json
 Discord.json | Make your own discord bot with json !
+[Join our Discord server !](https://discord.gg/X5ccPhr)
+
 ## Sample configuration
 ```javascript
 {
