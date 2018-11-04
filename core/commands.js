@@ -51,6 +51,11 @@ module.exports = {
                                 console.error("[ERROR] (" + command.command + ") This role doesn't exist!");
                             }
                             break;
+                        case "purge":
+                            if(msg.guild.member(client.user).hasPermission("MANAGE_MESSAGES")) {
+                                msg.channel.bulkDelete(100);
+                            }
+                            break;
                         default:
                             break;
                     }                                            
