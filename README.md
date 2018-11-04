@@ -1,10 +1,10 @@
 ![discord.json](https://nsa39.casimages.com/img/2018/11/04/181104041539518569.png)
 
-# discord.json
 Discord.json | Make your own discord bot with json !
 [Join our Discord server !](https://discord.gg/X5ccPhr)
 
-## Sample configuration
+![Sample configuration](https://nsa39.casimages.com/img/2018/11/04/181104041933350023.png)
+
 ```javascript
 {
     "general": {
