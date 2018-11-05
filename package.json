@@ -13,11 +13,9 @@
   "author": "Overflow",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^11.4.2",
-    "moment": "^2.22.2"
+    "discord.js": "^11.4.2"
   },
   "devDependencies": {
-    "chai": "^4.2.0",
     "mocha": "^5.2.0"
   }
 }
