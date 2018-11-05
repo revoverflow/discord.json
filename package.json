@@ -14,9 +14,11 @@
   "license": "ISC",
   "dependencies": {
     "discord.js": "^11.4.2",
+    "moment": "^2.22.2"
     "fs": "0.0.1-security"
   },
   "devDependencies": {
+    "chai": "^4.2.0",
     "mocha": "^5.2.0"
   }
 }

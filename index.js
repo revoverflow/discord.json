@@ -1,7 +1,14 @@
-console.log("[INFO] discord.json v1.0");
+const Logger = require("./lib/logger");
+
+Logger.info("discord.json v1.0");
 
 // Import Discord and File manager
 const Discord = require('discord.js');
+const client = new Discord.Client();
+
+const config = require("./bot.json");
+
+Logger.info("Loading configuration...");
 const fs = require("fs")
 
 // Import Core functions
@@ -19,9 +26,7 @@ console.log("[INFO] Loading configuration...");
 
 // When bot is ready
 client.on('ready', () => {
-    console.log(`[SUCCESS] Logged in as ${client.user.tag}`);
-
-    // For each reaction_message in the config ...
+    Logger.info(`Logged in as ${client.user.tag}`);
     config.reaction_messages.forEach(message => {
         // ... 
         reactionmanager.createReactionMessage(client, message.channel_id, message.message_id, message.reaction, message.role_id);
@@ -53,7 +58,7 @@ if (config.welcome.enabled) {
     } else if (config.welcome.type == "dm") {
         events.initDmWelcome(client, config.welcome.message);
     } else {
-        console.error("[ERROR] Unknown welcome message type : " + config.welcome.type);
+        Logger.error("[ERROR] Unknown welcome message type : " + config.welcome.type);
     }
 }
 
