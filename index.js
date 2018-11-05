@@ -2,6 +2,7 @@ console.log("[INFO] discord.json v1.0");
 
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const fs = require("fs")
 
 const config = require("./bot.json");
 console.log("[INFO] Loading configuration...");
