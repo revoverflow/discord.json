@@ -3,5 +3,6 @@ node_js:
   - "stable"
 before_script:
   - npm install
+  - cp ./examples/bot.json ./bot.json
 script:
   - npm test index.js
