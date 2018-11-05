@@ -6,53 +6,56 @@
 
 ![Sample configuration](https://nsa39.casimages.com/img/2018/11/04/181104042118770870.png)
 
-```javascript
+```json
 {
     "general": {
-        "token": "ENTER YOUR TOKEN HERE"
+        "token": ""
     },
     "welcome": {
         "enabled": true,
         "type": "channel",
-        "channel_id": "CHANNEL ID",
-        "message": "Welcome {user} to the server !"
+        "channel_id": "508650923447287812",
+        "message": "Welcome {user} to {guild} ! Your id is {id} !"
     },
-    "commands": [
-        {
-           "command": "!command1",
-           "action": "send_message",
-           "message": "MESSAGE TO SEND IN CHANNEL"
+    "commands": [{
+            "command": "!hey",
+            "action": "send_message",
+            "message": "Hey!"
         },
         {
-            "command": "!command2",
+            "command": "!heymp",
             "action": "send_dm",
-            "message": "MESSAGE TO SEND IN PRIVATE"
+            "message": "Hey!"
         },
         {
-            "command": "!command3",
+            "command": "!givemyskill",
             "action": "add_role",
-            "role_id": "ROLE ID"
+            "role_id": ""
         },
         {
-            "command": "!command4",
+            "command": "!removemyskill",
             "action": "remove_role",
-            "role_id": "ROLE ID"
+            "role_id": ""
         },
         {
-            "command": "!command5",
+            "command": "!switchmyskill",
             "action": "switch_role",
-            "role_id": "ROLE ID"
+            "role_id": ""
         }
     ],
-    "reaction_messages": [
-        {
-            "channel_id": "ENTER CHANNEL ID HERE",
-            "message_id": "ENTER MESSAGE ID HERE",
-            "action": "role",
-            "role_id": "ID OF THE ROLE",
-            "reaction": "🌠 REACTION AS AN EMOJI"
-        }
-    ]
+    "reaction_messages": [{
+        "channel_id": "",
+        "message_id": "",
+        "action": "role",
+        "role_id": "",
+        "reaction": "🌠"
+    }],
+    "presence": {
+        "enabled": true,
+        "type": "watching",
+        "text": "discord.json <3",
+        "streaming_url": "https://www.twitch.tv/thomasbysfr"
+    }
 }
 ```
 
