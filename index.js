@@ -1,19 +1,29 @@
 console.log("[INFO] discord.json v1.0");
 
+// Import Discord and File manager
 const Discord = require('discord.js');
-const client = new Discord.Client();
 const fs = require("fs")
 
-const config = require("./bot.json");
-console.log("[INFO] Loading configuration...");
-
+// Import Core functions
 const events = require("./core/events.js");
 const commandmanager = require("./core/commands.js");
 const reactionmanager = require("./core/reactionmsg.js");
 
+// Create the client
+const client = new Discord.Client();
+
+// Register the bot config
+const config = require("./bot.json");
+
+console.log("[INFO] Loading configuration...");
+
+// When bot is ready
 client.on('ready', () => {
     console.log(`[SUCCESS] Logged in as ${client.user.tag}`);
+
+    // For each reaction_message in the config ...
     config.reaction_messages.forEach(message => {
+        // ... 
         reactionmanager.createReactionMessage(client, message.channel_id, message.message_id, message.reaction, message.role_id);
     });
 

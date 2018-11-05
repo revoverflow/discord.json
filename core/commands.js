@@ -3,6 +3,11 @@ var config = require("../bot.json");
 var commandlist = [];
 
 module.exports = {
+    /**
+     * Create the message listener
+     * 
+     * @param {Discord.client} client 
+     */
     initMessageListener: function (client) {
         client.on("message", msg => {
             commandlist.forEach(command => {
@@ -63,10 +68,22 @@ module.exports = {
             });
         });
     },
+
+    /**
+     * Add the command to the commands array
+     * 
+     * @param {string} command 
+     */
     registerCommand: function (command) {
         commandlist.push(command);
         console.log("[CMD] Command " + command.command + " has been successfully registered !");
     },
+
+    /**
+     * UNUSABLE FUNCTION
+     * 
+     * @param {string} command 
+     */
     deleteCommand: function (command) {
 
     }

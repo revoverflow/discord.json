@@ -1,4 +1,16 @@
 module.exports = {
+
+    /**
+     * Assign the roles to the reaction on the message
+     * 
+     * @param {Discord.Client} client
+     * @param {string} channel
+     * @param {string} message
+     * @param {string} reaction
+     * @param {string} role
+     * 
+     * @returns {void}
+     */
     createReactionMessage: (client, channel, message, reaction, role) => {
         client.channels.get(channel).fetchMessage(message).then(msg => {
             msg.react(reaction);
