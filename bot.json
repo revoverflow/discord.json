@@ -5,43 +5,46 @@
     "welcome": {
         "enabled": true,
         "type": "channel",
-        "channel_id": "508588496856940546",
-        "message": "Welcome {user} to the server !"
+        "channel_id": "508650923447287812",
+        "message": "Welcome {user} to {guild} ! Your id is {id} !"
     },
-    "commands": [
-        {
-           "command": "!hey",
-           "action": "send_message",
-           "message": "Hey!"
+    "commands": [{
+            "command": "!hey",
+            "action": "send_message",
+            "message": "Hey!"
         },
         {
             "command": "!heymp",
             "action": "send_dm",
-            "message": "Hey this is a private message :)!"
+            "message": "Hey!"
         },
         {
             "command": "!givemyskill",
             "action": "add_role",
-            "role_id": "508586750117937152"
+            "role_id": ""
         },
         {
             "command": "!removemyskill",
             "action": "remove_role",
-            "role_id": "508586750117937152"
+            "role_id": ""
         },
         {
             "command": "!switchmyskill",
             "action": "switch_role",
-            "role_id": "508586750117937152"
+            "role_id": ""
         }
     ],
-    "reaction_messages": [
-        {
-            "channel_id": "508586540734087173",
-            "message_id": "508605434123517962",
-            "action": "role",
-            "role_id": "508586750117937152",
-            "reaction": "🌠"
-        }
-    ]
+    "reaction_messages": [{
+        "channel_id": "",
+        "message_id": "",
+        "action": "role",
+        "role_id": "",
+        "reaction": "🌠"
+    }],
+    "presence": {
+        "enabled": true,
+        "type": "watching",
+        "text": "discord.json <3",
+        "streaming_url": "https://www.twitch.tv/thomasbysfr"
+    }
 }

@@ -15,12 +15,31 @@ client.on('ready', () => {
     config.reaction_messages.forEach(message => {
         reactionmanager.createReactionMessage(client, message.channel_id, message.message_id, message.reaction, message.role_id);
     });
+
+    if (config.presence.enabled) {
+        if (config.presence.type == "game") {
+            client.user.setActivity(config.presence.text, {
+                type: 'PLAYING'
+            });
+        } else if (config.presence.type == "watching") {
+            client.user.setActivity(config.presence.text, {
+                type: 'WATCHING'
+            });
+        } else if (config.presence.type == "streaming") {
+            client.user.setActivity(config.presence.text, {
+                type: 'STREAMING',
+                url: config.presence.streaming_url
+            });
+        } else {
+            console.error("[ERROR] Unknown welcome message type : " + config.welcome.type);
+        }
+    }
 });
 
-if(config.welcome.enabled) {
-    if(config.welcome.type == "channel") {
+if (config.welcome.enabled) {
+    if (config.welcome.type == "channel") {
         events.initChannelWelcome(client, config.welcome.channel_id, config.welcome.message);
-    } else if(config.welcome.type == "dm") {
+    } else if (config.welcome.type == "dm") {
         events.initDmWelcome(client, config.welcome.message);
     } else {
         console.error("[ERROR] Unknown welcome message type : " + config.welcome.type);
