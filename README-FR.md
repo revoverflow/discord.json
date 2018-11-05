@@ -1,8 +1,9 @@
 ![discord.json](https://nsa39.casimages.com/img/2018/11/04/181104041539518569.png)
 [![Build Status](https://travis-ci.org/dotOverflow/discord.json.svg?branch=master)](https://travis-ci.org/dotOverflow/discord.json)
+[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
-- Discord.json | Creez votre bot discord simplement avec un fichier json !
-[Join our Discord server !](https://discord.gg/X5ccPhr)
+- Discord.json | Créez votre bot discord simplement avec un fichier JSON !
+[Rejoins notre serveur Discord !](https://discord.gg/X5ccPhr)
 
 ![Sample configuration](https://nsa39.casimages.com/img/2018/11/04/181104042118770870.png)
 
@@ -62,27 +63,27 @@
 ![Advancement](https://nsa39.casimages.com/img/2018/11/04/181104042331851103.png)
 
 - [x] Message de bienvenue
-    - [x] Types (channel/dm)
+    - [x] Types (salon / message privé)
     - [x] Variables ({user}, {guild}, {id})
-- [ ] Leave message
-- [ ] Command & actions
-    - [x] send_message
-    - [x] send_dm
-    - [x] switch_role
-    - [x] add_role
-    - [x] remove_role
-    - [x] purge
-    - [ ] send_embed
-    - [ ] create_invite
-- [x] Reaction messages
-    - [x] Role switch
-- [ ] Embed support
-- [ ] Utils classes
+- [ ] Message lorsqu'un membre quitte le serveur
+- [ ] Commandes & actions
+    - [x] send_message -> Envoyer un message
+    - [x] send_dm -> Envoyer un message privé au membre ciblé
+    - [x] switch_role -> Echanger les rôles
+    - [x] add_role -> Ajouter un rôle
+    - [x] remove_role -> Enlever un rôle
+    - [x] purge -> Purge
+    - [ ] send_embed -> Envoyer un embed
+    - [ ] create_invite -> Créer une invitation
+- [x] Messages de réaction
+    - [x] Echanger les rôles
+- [ ] Support en format embed
+- [ ] Classes utiles
 
 ![Useful links](https://nsa39.casimages.com/img/2018/11/04/181104042331933180.png)
 
-- Used libraries :
+- Bibliothèques utilisées :
 [discord.js](https://github.com/discordjs/discord.js/)
 
-- Useful websites :
-[copy and paste emoji](https://www.copyandpasteemoji.com/)
+- Autres sites :
+[Copier et coller des émojis (Copy and paste emoji)](https://www.copyandpasteemoji.com/)
