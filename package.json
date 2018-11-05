@@ -1,6 +1,6 @@
 {
   "name": "discord.json",
-  "version": "1.0.0",
+  "version": "1.0.1-rc01",
   "description": "Discord json api",
   "main": "index.js",
   "scripts": {
@@ -15,6 +15,7 @@
   "dependencies": {
     "discord.js": "^11.4.2",
     "moment": "^2.22.2"
+    "fs": "0.0.1-security"
   },
   "devDependencies": {
     "chai": "^4.2.0",
