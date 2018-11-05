@@ -1,4 +1,5 @@
 var config = require("../bot.json");
+let Logger = require("../lib/logger");
 
 var commandlist = [];
 
@@ -18,37 +19,37 @@ module.exports = {
                             if(msg.guild.roles.get(command.role_id)) {
                                 if(!msg.member.roles.has(command.role_id)) {
                                     msg.member.addRole(msg.guild.roles.get(command.role_id));
-                                    console.log("[ROLE] Role " + msg.guild.roles.get(command.role_id).name + " has been added to " + msg.author.username);                  
+                                    Logger.info("Role " + msg.guild.roles.get(command.role_id).name + " has been added to " + msg.author.username);
                                 } else {
                                     msg.member.removeRole(msg.guild.roles.get(command.role_id));
-                                    console.log("[ROLE] Role " + msg.guild.roles.get(command.role_id).name + " has been removed to " + msg.author.username);                  
+                                    Logger.info("Role " + msg.guild.roles.get(command.role_id).name + " has been removed to " + msg.author.username);
                                 }
                             } else {
-                                console.error("[ERROR] (" + command.command + ") This role doesn't exist!");
+                                Logger.error("(" + command.command + ") This role doesn't exist!");
                             }
                             break;
                         case "add_role":
                             if(msg.guild.roles.get(command.role_id)) {
                                 if(!msg.member.roles.has(command.role_id)) {
                                     msg.member.addRole(msg.guild.roles.get(command.role_id));
-                                    console.log("[ROLE] Role " + msg.guild.roles.get(command.role_id).name + " has been added to " + msg.author.username);
+                                    Logger.info("Role " + msg.guild.roles.get(command.role_id).name + " has been added to " + msg.author.username);
                                 } else {
                                     msg.channel.send(":lock: **You already have this role.**")
                                 }        
                             } else {
-                                console.error("[ERROR] (" + command.command + ") This role doesn't exist!");
+                                Logger.error("(" + command.command + ") This role doesn't exist!");
                             }
                             break;
                         case "remove_role":
                             if(msg.guild.roles.get(command.role_id)) {
                                 if(msg.member.roles.has(command.role_id)) {
                                     msg.member.removeRole(msg.guild.roles.get(command.role_id));
-                                    console.log("[ROLE] Role " + msg.guild.roles.get(command.role_id).name + " has been removed to " + msg.author.username);
+                                    Logger.info("Role " + msg.guild.roles.get(command.role_id).name + " has been removed to " + msg.author.username);
                                 } else {
                                     msg.channel.sendMessage(":lock: **You don't have this role.**");
                                 }
                             } else {
-                                console.error("[ERROR] (" + command.command + ") This role doesn't exist!");
+                                Logger.error("(" + command.command + ") This role doesn't exist!");
                             }
                             break;
                         case "purge":
@@ -65,7 +66,7 @@ module.exports = {
     },
     registerCommand: function(command) {
         commandlist.push(command);
-        console.log("[CMD] Command " + command.command + " has been successfully registered !");
+        Logger.info("Command " + command.command + " has been successfully registered !");
     },
     deleteCommand: function(command) {
         
