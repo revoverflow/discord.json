@@ -74,6 +74,7 @@
 - [x] Reaction messages
     - [x] Role switch
 - [ ] Embed support
+- [ ] Création des utils
 
 ![Useful links](https://nsa39.casimages.com/img/2018/11/04/181104042331933180.png)
 
