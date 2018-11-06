@@ -4,12 +4,11 @@ Logger.info("discord.json v1.0");
 
 // Import Discord and File manager
 const Discord = require('discord.js');
-const client = new Discord.Client();
-
-const config = require("./bot.json");
 
 Logger.info("Loading configuration...");
 const fs = require("fs")
+
+var stdio = require('stdio');
 
 // Import Core functions
 const events = require("./core/events.js");
@@ -68,4 +67,8 @@ config.commands.forEach(command => {
 
 commandmanager.initMessageListener(client);
 
-client.login(config.general.token);
+var ops = stdio.getopt({
+    'token': {key: 'token', args: 1, description: 'Provide a token in the command line.', default: config.general.token},
+});
+
+client.login(ops.token);
