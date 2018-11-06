@@ -80,3 +80,6 @@ typings/
 
 # Ide
 .idea/
+
+# Project non utils files
+bot.json
