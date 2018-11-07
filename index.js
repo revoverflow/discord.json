@@ -6,7 +6,10 @@ Logger.info("discord.json v1.0");
 const Discord = require('discord.js');
 
 Logger.info("Loading configuration...");
-const fs = require("fs")
+const fs = require("fs");
+
+// Register plugins folder
+const pluginsFolder = './plugins/';
 
 var stdio = require('stdio');
 
@@ -49,6 +52,14 @@ client.on('ready', () => {
             console.error("[ERROR] Unknown welcome message type : " + config.welcome.type);
         }
     }
+
+    // Register plugins
+    fs.readdir(pluginsFolder, (err, files) => {
+        files.forEach(file => {
+            Logger.info(`Register plugin : ${file}`);
+            require(pluginsFolder+file).handle(client)
+        });
+    })
 });
 
 if (config.welcome.enabled) {
