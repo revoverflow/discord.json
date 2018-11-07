@@ -19,6 +19,7 @@ lib-cov
 
 # Coverage directory used by tools like istanbul
 coverage
+.eslintrc.json
 
 # nyc test coverage
 .nyc_output

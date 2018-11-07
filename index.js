@@ -67,6 +67,7 @@ config.commands.forEach(command => {
 
 commandmanager.initMessageListener(client);
 
+// Get ops from command lines
 var ops = stdio.getopt({
     'token': {key: 'token', args: 1, description: 'Provide a token in the command line.', default: config.general.token},
 });

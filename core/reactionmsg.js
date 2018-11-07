@@ -12,9 +12,10 @@ module.exports = {
      * @returns {void}
      */
     createReactionMessage: (client, channel, message, reaction, role) => {
-        client.channels.get(channel).fetchMessage(message).then(msg => {
-            msg.react(reaction);
-        });
+
+        client.channels.get(channel).fetchMessage(message)
+                    .then(msg => msg.react(reaction))
+                    .catch(console.error);
 
         client.on("messageReactionAdd", (msgreact, user) => {
             if (msgreact.message.id === message) {
