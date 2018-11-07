@@ -15,10 +15,10 @@ module.exports = {
                 if (msg.content == command.command) {
                     switch (command.action) {
                         case "send_message":
-                            msg.channel.sendMessage(command.message);
+                            msg.channel.send(command.message);
                             break;
                         case "send_dm":
-                            msg.author.sendMessage(command.message);
+                            msg.author.send(command.message);
                             break;
                         case "switch_role":
                             if (msg.guild.roles.get(command.role_id)) {
@@ -51,7 +51,7 @@ module.exports = {
                                     msg.member.removeRole(msg.guild.roles.get(command.role_id));
                                     Logger.info("Role " + msg.guild.roles.get(command.role_id).name + " has been removed to " + msg.author.username);
                                 } else {
-                                    msg.channel.sendMessage(":lock: **You don't have this role.**");
+                                    msg.channel.send(":lock: **You don't have this role.**");
                                 }
                             } else {
                                 Logger.error("(" + command.command + ") This role doesn't exist!");
