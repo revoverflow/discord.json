@@ -56,8 +56,10 @@ client.on('ready', () => {
     // Register plugins
     fs.readdir(pluginsFolder, (err, files) => {
         files.forEach(file => {
-            Logger.info(`Register plugin : ${file}`);
-            require(pluginsFolder+file).handle(client)
+            if(file.endsWith(".js")){
+                Logger.info(`Register plugin : ${file}`);
+                require(pluginsFolder+file).handle(client);
+            }
         });
     })
 });
