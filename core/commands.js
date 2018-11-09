@@ -6,8 +6,8 @@ var commandlist = [];
 module.exports = {
     /**
      * Create the message listener
-     * 
-     * @param {Discord.client} client 
+     *
+     * @param {Discord.Client|module:discord.js.Client} client
      */
     initMessageListener: function (client) {
         client.on("message", msg => {

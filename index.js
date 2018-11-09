@@ -1,4 +1,5 @@
 const Logger = require("./lib/logger");
+const Bot = require("./lib/bot");
 
 Logger.info("discord.json v1.0");
 
@@ -19,7 +20,7 @@ const commandmanager = require("./core/commands.js");
 const reactionmanager = require("./core/reactionmsg.js");
 
 // Create the client
-const client = new Discord.Client();
+let bot = new Bot(null);
 
 // Register the bot config
 const config = require("./bot.json");
@@ -27,7 +28,7 @@ const config = require("./bot.json");
 console.log("[INFO] Loading configuration...");
 
 // When bot is ready
-client.on('ready', () => {
+bot.getClient().on('ready', () => {
     Logger.info(`Logged in as ${client.user.tag}`);
     config.reaction_messages.forEach(message => {
         // ... 
@@ -36,15 +37,15 @@ client.on('ready', () => {
 
     if (config.presence.enabled) {
         if (config.presence.type == "game") {
-            client.user.setActivity(config.presence.text, {
+            bot.getClient().user.setActivity(config.presence.text, {
                 type: 'PLAYING'
             });
         } else if (config.presence.type == "watching") {
-            client.user.setActivity(config.presence.text, {
+            bot.getClient().user.setActivity(config.presence.text, {
                 type: 'WATCHING'
             });
         } else if (config.presence.type == "streaming") {
-            client.user.setActivity(config.presence.text, {
+            bot.getClient().user.setActivity(config.presence.text, {
                 type: 'STREAMING',
                 url: config.presence.streaming_url
             });
@@ -58,7 +59,7 @@ client.on('ready', () => {
         files.forEach(file => {
             if(file.endsWith(".js")){
                 Logger.info(`Register plugin : ${file}`);
-                require(pluginsFolder+file).handle(client);
+                require(pluginsFolder+file).handle(bot.getClient());
             }
         });
     })
@@ -66,9 +67,9 @@ client.on('ready', () => {
 
 if (config.welcome.enabled) {
     if (config.welcome.type == "channel") {
-        events.initChannelWelcome(client, config.welcome.channel_id, config.welcome.message);
+        events.initChannelWelcome(bot.getClient(), config.welcome.channel_id, config.welcome.message);
     } else if (config.welcome.type == "dm") {
-        events.initDmWelcome(client, config.welcome.message);
+        events.initDmWelcome(bot.getClient(), config.welcome.message);
     } else {
         Logger.error("[ERROR] Unknown welcome message type : " + config.welcome.type);
     }
@@ -78,11 +79,11 @@ config.commands.forEach(command => {
     commandmanager.registerCommand(command);
 });
 
-commandmanager.initMessageListener(client);
+commandmanager.initMessageListener(bot.getClient());
 
 // Get ops from command lines
 var ops = stdio.getopt({
     'token': {key: 'token', args: 1, description: 'Provide a token in the command line.', default: config.general.token},
 });
 
-client.login(ops.token);
+bot.login(ops.token);

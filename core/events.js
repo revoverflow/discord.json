@@ -4,8 +4,8 @@ module.exports = {
 
     /**
      * Setup the welcome message on Discord Private Message
-     * 
-     * @param {Discord.client} client
+     *
+     * @param {Discord.Client|module:discord.js.Client} client
      * @param {string} message
      * 
      * @returns {void}
@@ -20,7 +20,8 @@ module.exports = {
     /**
      * Setup the welcome message on Discord Private Message
      * 
-     * @param {Discord.client} client
+     * @param {Discord.Client|module:discord.js.Client} client
+     * @param channel
      * @param {string} message
      * 
      * @returns {void}
