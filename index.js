@@ -1,57 +1,50 @@
+// Node module package.
+const stdio = require('stdio');
+const fs = require("fs");
+
+// Class from lib directory
 const Logger = require("./lib/logger");
 const Bot = require("./lib/bot");
 
-Logger.info("discord.json v1.0");
-
-// Import Discord and File manager
-const Discord = require('discord.js');
-
-Logger.info("Loading configuration...");
-const fs = require("fs");
-
-// Register plugins folder
-const pluginsFolder = './plugins/';
-
-var stdio = require('stdio');
-
-// Import Core functions
+// Class from core directory
 const events = require("./core/events.js");
 const commandmanager = require("./core/commands.js");
 const reactionmanager = require("./core/reactionmsg.js");
 
-// Create the client
-let bot = new Bot(null);
-
-// Register the bot config
+// Config file of bot
 const config = require("./bot.json");
 
-console.log("[INFO] Loading configuration...");
+// Register plugins folder
+const pluginsFolder = './plugins/';
 
-// When bot is ready
+
+Logger.info("discord.json v1.0");
+Logger.info("Loading configuration...");
+
+let bot;
+
+bot = new Bot(null);
 bot.getClient().on('ready', () => {
-    Logger.info(`Logged in as ${client.user.tag}`);
     config.reaction_messages.forEach(message => {
-        // ... 
-        reactionmanager.createReactionMessage(client, message.channel_id, message.message_id, message.reaction, message.role_id);
+        reactionmanager.createReactionMessage(bot.getClient(), message.channel_id, message.message_id, message.reaction, message.role_id);
     });
 
     if (config.presence.enabled) {
-        if (config.presence.type == "game") {
-            bot.getClient().user.setActivity(config.presence.text, {
-                type: 'PLAYING'
-            });
-        } else if (config.presence.type == "watching") {
-            bot.getClient().user.setActivity(config.presence.text, {
-                type: 'WATCHING'
-            });
-        } else if (config.presence.type == "streaming") {
-            bot.getClient().user.setActivity(config.presence.text, {
-                type: 'STREAMING',
-                url: config.presence.streaming_url
-            });
-        } else {
-            console.error("[ERROR] Unknown welcome message type : " + config.welcome.type);
+        
+        switch (config.presence.type) {
+            case 'game':
+                bot.getClient().user.setActivity(config.presence.text, { type: 'PLAYING' });
+                break;
+            case 'watching':
+                bot.getClient().user.setActivity(config.presence.text, { type: 'WATCHING' });
+                break;
+            case 'streaming':
+                bot.getClient().user.setActivity(config.presence.text, { type: 'STREAMING', url: config.presence.streaming_url });
+                break;
+            default:
+                Logger.error(`Unknown welcome message type : ${config.welcome.type}`);
         }
+
     }
 
     // Register plugins
@@ -78,12 +71,17 @@ if (config.welcome.enabled) {
 config.commands.forEach(command => {
     commandmanager.registerCommand(command);
 });
-
 commandmanager.initMessageListener(bot.getClient());
 
-// Get ops from command lines
-var ops = stdio.getopt({
-    'token': {key: 'token', args: 1, description: 'Provide a token in the command line.', default: config.general.token},
+let ops = stdio.getopt({
+    'token': {
+        key: 'token',
+        args: 1,
+        description: 'Provide a token in the command line.',
+        default: config.general.token
+    },
 });
 
-bot.login(ops.token);
+bot.login(ops.token)
+    .then(() => Logger.info(`Discord.json logged as ${bot.getClient().user.tag}`))
+    .catch(err => Logger.error(`Discord.json error when logged: ${err}`));
