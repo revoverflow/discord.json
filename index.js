@@ -16,8 +16,8 @@ var stdio = require('stdio');
 
 // Import Core functions
 const events = require("./core/events.js");
-const commandmanager = require("./core/commands.js");
-const reactionmanager = require("./core/reactionmsg.js");
+const commandManager = require("./core/commands.js");
+const reactionManager = require("./core/reactionmsg.js");
 
 // Create the client
 let bot = new Bot(null);
@@ -25,14 +25,13 @@ let bot = new Bot(null);
 // Register the bot config
 const config = require("./bot.json");
 
-console.log("[INFO] Loading configuration...");
 
 // When bot is ready
 bot.getClient().on('ready', () => {
-    Logger.info(`Logged in as ${client.user.tag}`);
+    Logger.info(`Logged in as ${bot.getClient().user.tag}`);
     config.reaction_messages.forEach(message => {
         // ... 
-        reactionmanager.createReactionMessage(client, message.channel_id, message.message_id, message.reaction, message.role_id);
+        reactionManager.createReactionMessage(bot.getClient(), message.channel_id, message.message_id, message.reaction, message.role_id);
     });
 
     if (config.presence.enabled) {
@@ -76,10 +75,10 @@ if (config.welcome.enabled) {
 }
 
 config.commands.forEach(command => {
-    commandmanager.registerCommand(command);
+    commandManager.registerCommand(command);
 });
 
-commandmanager.initMessageListener(bot.getClient());
+commandManager.initMessageListener(bot.getClient());
 
 // Get ops from command lines
 var ops = stdio.getopt({
