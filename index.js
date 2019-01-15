@@ -25,14 +25,17 @@ let bot = new Bot(null);
 // Register the bot config
 const config = require("./bot.json");
 
-console.log("[INFO] Loading configuration...");
+// Debug mode
+if (config.general.debug) {
+    Logger.warn("Debug mode is enabled, some confidentials informations will be sent in the terminal ! (You can disable this mode in your bot config file)");
+    bot.getClient().on("debug", (d) => Logger.debug(d));
+}
 
 // When bot is ready
 bot.getClient().on('ready', () => {
-    Logger.info(`Logged in as ${client.user.tag}`);
+    Logger.info(`Logged in as ${bot.getClient().user.tag}`);
     config.reaction_messages.forEach(message => {
-        // ... 
-        reactionmanager.createReactionMessage(client, message.channel_id, message.message_id, message.reaction, message.role_id);
+        reactionmanager.createReactionMessage(bot.getClient(), message.channel_id, message.message_id, message.reaction, message.role_id);
     });
 
     if (config.presence.enabled) {
@@ -58,7 +61,7 @@ bot.getClient().on('ready', () => {
     fs.readdir(pluginsFolder, (err, files) => {
         files.forEach(file => {
             if(file.endsWith(".js")){
-                Logger.info(`Register plugin : ${file}`);
+                Logger.info(`Registered plugin : ${file}`);
                 require(pluginsFolder+file).handle(bot.getClient());
             }
         });

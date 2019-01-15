@@ -1,6 +1,7 @@
 {
     "general": {
-        "token": ""
+        "token": "",
+        "debug": false
     },
     "welcome": {
         "enabled": true,

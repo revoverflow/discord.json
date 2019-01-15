@@ -9,7 +9,8 @@
 ```json
 {
     "general": {
-        "token": ""
+        "token": "",
+        "debug": false
     },
     "welcome": {
         "enabled": true,
@@ -78,6 +79,7 @@
     - [x] Role switch
 - [ ] Embed support
 - [ ] Utils classes
+- [x] Debug mode
 
 ![Useful links](https://nsa39.casimages.com/img/2018/11/04/181104042331933180.png)
 

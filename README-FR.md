@@ -10,7 +10,8 @@
 ```json
 {
     "general": {
-        "token": ""
+        "token": "",
+        "debug": false
     },
     "welcome": {
         "enabled": true,
@@ -79,6 +80,7 @@
     - [x] Echanger les rôles
 - [ ] Support en format embed
 - [ ] Classes utiles
+- [x] Mode débug
 
 ![Useful links](https://nsa39.casimages.com/img/2018/11/04/181104042331933180.png)
 

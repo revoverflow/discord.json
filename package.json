@@ -13,6 +13,7 @@
   "author": "Overflow",
   "license": "ISC",
   "dependencies": {
+    "colors": "^1.3.3",
     "discord.js": "^11.4.2",
     "eslint": "^5.8.0",
     "fs": "0.0.1-security",
