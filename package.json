@@ -1,6 +1,6 @@
 {
   "name": "discord.json",
-  "version": "1.0.1-rc01",
+  "version": "1.0.2-rc01",
   "description": "Discord json api",
   "main": "index.js",
   "scripts": {
