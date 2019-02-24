@@ -1,5 +1,5 @@
 ![discord.json](https://nsa39.casimages.com/img/2018/11/04/181104041539518569.png)
-![](https://img.shields.io/travis/dotOverflow/discord.json.svg?style=for-the-badge) [![](https://img.shields.io/github/last-commit/dotOverflow/discord.json.svg?style=for-the-badge)](https://github.com/dotOverflow/discord.json) [![](https://img.shields.io/github/languages/code-size/badges/shields.svg?style=for-the-badge)](https://github.com/dotOverflow/discord.json/) [![](https://img.icons8.com/color/180/discord-new-logo.png)](https://discord.gg/RTvesfS)
+![](https://img.shields.io/travis/dotOverflow/discord.json.svg?style=for-the-badge) [![](https://img.shields.io/github/last-commit/dotOverflow/discord.json.svg?style=for-the-badge)](https://github.com/dotOverflow/discord.json) [![](https://img.shields.io/github/languages/code-size/badges/shields.svg?style=for-the-badge)](https://github.com/dotOverflow/discord.json/) [![](https://img.icons8.com/color/180/discord-new-logo.png =50x50)](https://discord.gg/RTvesfS)
 
 - Discord.json | Make your own discord bot with json !
 [Join our Discord server !](https://discord.gg/X5ccPhr)
