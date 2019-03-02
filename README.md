@@ -1,6 +1,10 @@
 ![discord.json](https://nsa40.casimages.com/img/2019/03/02/190302101053442737.png)
 <p align="center">
-[![](https://img.shields.io/travis/dotOverflow/discord.json.svg?style=for-the-badge)](https://travis-ci.org/dotOverflow/discord.json) [![](https://img.shields.io/github/last-commit/dotOverflow/discord.json.svg?style=for-the-badge)](https://github.com/dotOverflow/discord.json) [![](https://img.shields.io/github/languages/code-size/badges/shields.svg?style=for-the-badge)](https://github.com/dotOverflow/discord.json/) [![](https://img.shields.io/discord/508586540734087170.svg?style=for-the-badge)](https://discord.gg/X5ccPhr)</p>
+    <img src="https://img.shields.io/travis/dotOverflow/discord.json.svg?style=for-the-badge" onclick="window.open('https://travis-   ci.org/dotOverflow/discord.json')"/>
+    <img src="https://img.shields.io/github/last-commit/dotOverflow/discord.json.svg?style=for-the-badge"/>
+    <img src="https://img.shields.io/github/languages/code-size/badges/shields.svg?style=for-the-badge"/>
+    <img src="https://img.shields.io/discord/508586540734087170.svg?style=for-the-badge" onclick="window.open('https://discord.gg/X5ccPhr')"/>
+</p>
 
 - Discord.json | Make your own discord bot with json !
 [Join our Discord server !](https://discord.gg/X5ccPhr)
