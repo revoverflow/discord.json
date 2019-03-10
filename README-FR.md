@@ -64,21 +64,22 @@
 ![Advancement](https://nsa39.casimages.com/img/2018/11/04/181104042331851103.png)
 
 - [x] Message de bienvenue
-    - [x] Types (salon / message privé)
-    - [x] Variables ({user}, {guild}, {id})
-- [ ] Message lorsqu'un membre quitte le serveur
+  - [x] Types (salon / message privé)
+  - [x] Variables ({user}, {guild}, {id})
+- [x] Message lorsqu'un membre quitte le serveur
+  - [x] Variables ({user}, {guild}, {id})
 - [ ] Commandes & actions
-    - [x] send_message -> Envoyer un message
-    - [x] send_dm -> Envoyer un message privé au membre ciblé
-    - [x] switch_role -> Echanger les rôles
-    - [x] add_role -> Ajouter un rôle
-    - [x] remove_role -> Enlever un rôle
-    - [x] purge -> Purge
-    - [ ] send_embed -> Envoyer un embed
-    - [ ] create_invite -> Créer une invitation
+  - [x] send_message -> Envoyer un message
+  - [x] send_dm -> Envoyer un message privé au membre ciblé
+  - [x] switch_role -> Echanger les rôles
+  - [x] add_role -> Ajouter un rôle
+  - [x] remove_role -> Enlever un rôle
+  - [x] purge -> Purge
+  - [ ] send_embed -> Envoyer un embed
+  - [ ] create_invite -> Créer une invitation
 - [x] Messages de réaction
-    - [x] Echanger les rôles
-- [ ] Support en format embed
+  - [x] Echanger les rôles
+- [ ] Support du format embed
 - [ ] Classes utiles
 - [x] Mode débug
 
