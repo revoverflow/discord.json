@@ -78,6 +78,14 @@ if (config.welcome.enabled) {
     }
 }
 
+if (config.byebye.enabled) {
+    if (config.byebye.type == "channel") {
+        events.initChannelByebye(bot.getClient(), config.byebye.channel_id, config.byebye.message);
+    } else {
+        Logger.error("[ERROR] Unknown byebye message type : " + config.byebye.type);
+    }
+}
+
 config.commands.forEach(command => {
     commandmanager.registerCommand(command);
 });
