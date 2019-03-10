@@ -23,6 +23,12 @@
         "channel_id": "508650923447287812",
         "message": "Welcome {user} to {guild} ! Your id is {id} !"
     },
+    "byebye": {
+        "enabled": true,
+        "type": "channel",
+        "channel_id": "508650923447287812",
+        "message": "See you soon {user} in {guild} ! His id was {id} !"
+    },
     "commands": [{
             "command": "!hey",
             "action": "send_message",
@@ -68,20 +74,21 @@
 ![Advancement](https://nsa39.casimages.com/img/2018/11/04/181104042331851103.png)
 
 - [x] Welcome
-    - [x] Types (channel/dm)
-    - [x] Message variable ({user})
-- [ ] Leave message
+  - [x] Types (channel/dm)
+  - [x] Message variable ({user})
+- [x] Leave message
+  - [x] Message variable ({user})
 - [ ] Command & actions
-    - [x] send_message
-    - [x] send_dm
-    - [x] switch_role
-    - [x] add_role
-    - [x] remove_role
-    - [x] purge
-    - [ ] send_embed
-    - [ ] create_invite
+  - [x] send_message
+  - [x] send_dm
+  - [x] switch_role
+  - [x] add_role
+  - [x] remove_role
+  - [x] purge
+  - [ ] send_embed
+  - [ ] create_invite
 - [x] Reaction messages
-    - [x] Role switch
+  - [x] Role switch
 - [ ] Embed support
 - [ ] Utils classes
 - [x] Debug mode
