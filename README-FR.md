@@ -19,6 +19,12 @@
         "channel_id": "508650923447287812",
         "message": "Bienvenue {user} sur {guild} ! Ton id est le suivant : {id} !"
     },
+    "byebye": {
+        "enabled": true,
+        "type": "channel",
+        "channel_id": "508650923447287812",
+        "message": "Au-revoir {user} ! Ton id est le suivant : {id} !"
+    },
     "commands": [{
             "command": "!hey",
             "action": "send_message",
