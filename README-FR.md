@@ -23,7 +23,7 @@
         "enabled": true,
         "type": "channel",
         "channel_id": "508650923447287812",
-        "message": "Au-revoir {user} ! Ton id est le suivant : {id} !"
+        "message": "{user} a quitté {guild} ! Son id était : {id} !"
     },
     "commands": [{
             "command": "!hey",
