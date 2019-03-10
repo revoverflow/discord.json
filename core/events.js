@@ -18,7 +18,7 @@ module.exports = {
     },
 
     /**
-     * Setup the welcome message on Discord Private Message
+     * Setup the welcome message on Discord Channel
      * 
      * @param {Discord.Client|module:discord.js.Client} client
      * @param channel
