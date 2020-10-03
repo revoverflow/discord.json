@@ -12,7 +12,7 @@ module.exports = {
     initMessageListener: function (client) {
         client.on("message", msg => {
             commandlist.forEach(command => {
-                if (msg.content == command.command) {
+                if (msg.content.trim() === command.command.trim()) {
                     switch (command.action) {
                         case "send_message":
                             msg.channel.send(command.message);
