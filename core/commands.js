@@ -27,7 +27,7 @@ module.exports = {
                                     console.log("[ROLE] Role " + msg.guild.roles.get(command.role_id).name + " has been added to " + msg.author.username);
                                 } else {
                                     msg.member.removeRole(msg.guild.roles.get(command.role_id));
-                                    console.log("[ROLE] Role " + msg.guild.roles.get(command.role_id).name + " has been removed to " + msg.author.username);
+                                    console.log("[ROLE] Role " + msg.guild.roles.get(command.role_id).name + " has been removed from " + msg.author.username);
                                 }
                             } else {
                                 Logger.error("(" + command.command + ") This role doesn't exist!");
@@ -49,7 +49,7 @@ module.exports = {
                             if (msg.guild.roles.get(command.role_id)) {
                                 if (msg.member.roles.has(command.role_id)) {
                                     msg.member.removeRole(msg.guild.roles.get(command.role_id));
-                                    Logger.info("Role " + msg.guild.roles.get(command.role_id).name + " has been removed to " + msg.author.username);
+                                    Logger.info("Role " + msg.guild.roles.get(command.role_id).name + " has been removed from " + msg.author.username);
                                 } else {
                                     msg.channel.send(":lock: **You don't have this role.**");
                                 }
@@ -77,7 +77,7 @@ module.exports = {
      */
     registerCommand: function (command) {
         commandlist.push(command);
-        Logger.info("Command " + command.command + " has been successfully registered !");
+        Logger.info("Command " + command.command + " has been successfully registered!");
     },
 
     /**
