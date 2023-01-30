@@ -27,7 +27,7 @@ const config = require("./bot.json");
 
 // Debug mode
 if (config.general.debug) {
-    Logger.warn("Debug mode is enabled, some confidentials informations will be sent in the terminal ! (You can disable this mode in your bot config file)");
+    Logger.warn("Debug mode is enabled, some confidentials informations will be sent in the terminal! (You can disable this mode in your bot config file)");
     bot.getClient().on("debug", (d) => Logger.debug(d));
 }
 
@@ -53,7 +53,7 @@ bot.getClient().on('ready', () => {
                 url: config.presence.streaming_url
             });
         } else {
-            console.error("[ERROR] Unknown welcome message type : " + config.welcome.type);
+            console.error("[ERROR] Unknown welcome message type: " + config.welcome.type);
         }
     }
 
@@ -74,7 +74,7 @@ if (config.welcome.enabled) {
     } else if (config.welcome.type == "dm") {
         events.initDmWelcome(bot.getClient(), config.welcome.message);
     } else {
-        Logger.error("[ERROR] Unknown welcome message type : " + config.welcome.type);
+        Logger.error("[ERROR] Unknown welcome message type: " + config.welcome.type);
     }
 }
 
@@ -82,7 +82,7 @@ if (config.byebye.enabled) {
     if (config.byebye.type == "channel") {
         events.initChannelByeBye(bot.getClient(), config.byebye.channel_id, config.byebye.message);
     } else {
-        Logger.error("[ERROR] Unknown byebye message type : " + config.byebye.type);
+        Logger.error("[ERROR] Unknown byebye message type: " + config.byebye.type);
     }
 }
 
