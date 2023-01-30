@@ -7,13 +7,13 @@
         "enabled": true,
         "type": "channel",
         "channel_id": "508650923447287812",
-        "message": "Welcome {user} to {guild} ! Your id is {id} !"
+        "message": "Welcome {user} to {guild}! Your id is {id}!"
     },
     "byebye": {
         "enabled": true,
         "type": "channel",
         "channel_id": "508650923447287812",
-        "message": "Byebye {user}, I hope you'll come back in {guild} ! Your id is {id} !"
+        "message": "Byebye {user}, I hope you'll come back to {guild}! Your id is {id}!"
     },
     "commands": [{
             "command": "!hey",
