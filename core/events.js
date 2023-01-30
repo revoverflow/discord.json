@@ -14,7 +14,7 @@ module.exports = {
         client.on("guildMemberAdd", member => {
             member.user.send(message.replace("{user}", member.user));
         });
-        Logger.info("[INFO] Join message is now setup !");
+        Logger.info("[INFO] Join message is now setup!");
     },
 
     /**
@@ -30,7 +30,7 @@ module.exports = {
         client.on("guildMemberAdd", member => {
             client.channels.get(channel).send(message.replace("{user}", member.user).replace("{guild}", member.guild.name).replace("{id}", member.user.id));
         });
-        Logger.info("[INFO] Join message is now setup !");
+        Logger.info("[INFO] Join message is now setup!");
     },
     
     /**
@@ -46,6 +46,6 @@ module.exports = {
         client.on("guildMemberRemove", member => {
             client.channels.get(channel).send(message.replace("{user}", member.user).replace("{guild}", member.guild.name).replace("{id}", member.user.id));
         });
-        Logger.info("[INFO] Leave message is now setup !");
+        Logger.info("[INFO] Leave message is now setup!");
     }
 }
